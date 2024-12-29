@@ -7,7 +7,7 @@ import { CreateAccountComponent } from './pages/create-account/create-account.co
 
 export const routes: Routes = [
   // Uncomment this line if you want to redirect empty path to 'login'
-  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'create-account', component: CreateAccountComponent },
   // { path: 'posts', component: PostsComponent },
