@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-account',
@@ -23,7 +24,7 @@ import { UserService } from '../../services/user.service';
 export class CreateAccountComponent implements OnInit {
   createAccountForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, public userService: UserService) {}
+  constructor(private fb: FormBuilder, public userService: UserService, private snackbar: MatSnackBar, private router: Router) {}
 
   ngOnInit(): void {
     this.createAccountForm = this.fb.group({
@@ -38,7 +39,10 @@ export class CreateAccountComponent implements OnInit {
       .createNewUser(this.createAccountForm.value)
       .then((res) => {
         console.log(res);
-        // Navigate or store user data as needed
+        this.snackbar.open('Create Account successful', 'ok');
+        this.userService.user = res ;
+        localStorage.setItem('user', JSON.stringify(res));
+        this.router.navigate(['/posts']);
       })
       .catch((err) => {
         console.log(err);

@@ -24,3 +24,21 @@
     padding-left: 20px;
 }
 
+.account{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    padding-right: 20px;
+    background-color: transparent; /* Make button background transparent */
+    border: none;
+} 
+.account mat-icon {
+    font-size: 25px; /* Adjust the size of the icon */
+    
+    background-color: #4285F4;
+    transition: color 0.3s; /* Smooth transition for color change */
+    border: none;
+}
+  

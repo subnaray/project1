@@ -13,13 +13,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CommonModule } from '@angular/common';
+import { PostsComponent } from './pages/posts/posts.component';
+import {MatIconModule} from '@angular/material/icon';
+import { Topbar2Component } from './components/topbar2/topbar2.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
+    Topbar2Component,
     LoginComponent,
     CreateAccountComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +38,11 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+    MatSnackBarModule,
+    CommonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatCardModule,
     RouterModule.forRoot([]),
   ],
   providers: [

@@ -15,7 +15,7 @@
                 <!-- <input type="email" matInput /> -->
                 <input matInput formControlName="username"/>
                 <mat-error *ngIf="createAccountForm.controls['username'].invalid">
-                    {{createAccountForm.controls['username'].hasError('required')?'User Name is required' : 'User Name should be atleast 6 characters'}}
+                    {{createAccountForm.controls['username'].hasError('required')?'User Name is required' : 'User Name should be atleast 10 characters'}}
                 </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
@@ -27,7 +27,7 @@
                 </mat-error>
             </mat-form-field>
         </form>
-        {{ createAccountForm.value | json }}
+        <!-- {{ createAccountForm.value | json }} -->
         <div class="buttons-container">
             <!-- <button mat-raised-button [disabled]="loginForm.invalid" (click)="login()" class="login-button"> -->
             <button mat-raised-button [disabled]="createAccountForm.invalid" (click)="create()" class="login-button">    

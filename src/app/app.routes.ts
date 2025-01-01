@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 // Uncomment these imports if the components are being used
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { PostsComponent } from './pages/posts/posts.component';
 // import { PostsComponent } from './pages/posts/posts.component';
 
 export const routes: Routes = [
@@ -10,7 +11,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'create-account', component: CreateAccountComponent },
-  // { path: 'posts', component: PostsComponent },
+  { path: 'posts', component: PostsComponent },
 ];
 
 @NgModule({
